@@ -1,16 +1,22 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
 import "antd/dist/antd.css";
-import * as UI from "../../lib/styles/styles"
+import * as UI from "../../lib/styles/styles";
 import { Spin } from "antd";
 
 import { CardWrapper, Card, Side } from "./styles";
 
-const FlashCards = ({ question, questions, handleNextQuestion, handleFetchCards, loading }) => {
+const FlashCards = ({
+  question,
+  questions,
+  handleNextQuestion,
+  handleFetchCards,
+  loading
+}) => {
   const decodeText = text => {
-    var e = document.createElement("span");
-    e.innerHTML = text;
-    return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+    const txt = document.createElement("textarea");
+    txt.innerHTML = text;
+    return txt.value;
   };
 
   return (

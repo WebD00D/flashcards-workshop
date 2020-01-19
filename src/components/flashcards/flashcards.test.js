@@ -8,7 +8,12 @@ const mockQuestionSet = {
 };
 
 test("renders question and answer", () => {
-  const { getByText } = render(<Flashcards question={mockQuestionSet} />);
+  const { getByText } = render(
+    <Flashcards
+      question={mockQuestionSet}
+      questions={[{ ...mockQuestionSet }]}
+    />
+  );
   const questionEl = getByText(/This is the question?/i);
   expect(questionEl).toBeInTheDocument();
 
